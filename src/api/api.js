@@ -43,5 +43,6 @@ export async function get(endpoint) {
   
 
 export default {
- //allt
+  get,
+  post2,
   };
