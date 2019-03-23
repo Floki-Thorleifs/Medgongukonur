@@ -1,1 +1,68 @@
 @import "../../config.scss";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 270px;
+}
+
+.postItem {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin-top: 40px;
+  font-family: $font-footer;
+
+  &__post {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    width: 60%;
+    border-bottom: 1px solid #ededed;
+  }
+
+  &__question {
+    background: #f2f2f2;
+    padding: 20px;
+  }
+
+  &__info {
+    opacity: 0.8;
+    color: $color-sidebar;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 200;
+  }
+
+  &__info ul {
+    display: flex;
+    flex-direction: column;
+    background: $accent;
+    padding: 1rem 30px;
+    margin-top: 0;
+    margin-left: 1rem;
+    list-style: none;
+  }
+
+  &__info li {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 3px;
+  }
+
+  &__name {
+    font-weight: 400;
+  }
+
+  &__comments--single {
+    border-bottom: 1px solid #ededed;
+    padding: 20px;
+    //padding-bottom: 10px;
+    margin-bottom: 2px;
+  }
+}
+
+.postItem:last-child {
+  margin-bottom: 15%;
+}
