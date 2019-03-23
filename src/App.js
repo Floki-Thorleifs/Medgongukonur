@@ -5,13 +5,11 @@ import { Route, Switch, withRouter } from 'react-router-dom'
 
 import Home from './routes/home';
 
-
-
 class App extends Component {
   render() {
     return (
       <main>
-        <Helmet defaultTitle="Medgongukonur"/>
+        <Helmet defaultTitle="Medgongukonur" />
 
         <div>
           <Switch location={this.props.location}>
