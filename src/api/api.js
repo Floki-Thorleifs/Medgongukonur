@@ -21,6 +21,27 @@ export async function get(endpoint) {
     return { result, status: response.status };
   }
 
+
+  export async function post2(endpoint) {
+    const url = `${baseurl}${endpoint}`;
+  
+    const token = window.localStorage.getItem('token');
+    const options = {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      method: 'POST',
+    };
+  
+    if (token) {
+      options.headers['Authorization'] = `Bearer ${token}`;
+    }
+    const response = await fetch(url, options); 
+    const result = await response;
+    return result;
+  }
+  
+
 export default {
  //allt
   };
