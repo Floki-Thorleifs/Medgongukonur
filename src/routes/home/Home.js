@@ -2,21 +2,31 @@ import React, { Component } from 'react';
 
 import Sidebar from '../../components/sidebar/Sidebar';
 import Footer from '../../components/footer/Footer';
-import Post from '../../components/post/Post';
+import Wall from '../../components/wall/Wall';
 
 //todo hafa token a signin
 class Home extends Component {
   render() {
     const comments = ['Halló Heimur', 'Nei Þú', 'Þú ert Heimur'];
-    const data = {
+    const temp = {
       comments: comments,
       name: 'Siggi',
       content: 'Eru bananar vegan?'
     };
+
+    const temp2 = {
+      comments: comments,
+      name: 'Hugrún',
+      content: 'Eru börn vegan?'
+    };
+
+    const data = {
+      posts: [temp, temp2]
+    };
     return (
       <div>
-        <Sidebar data={data} />
-        <Post data={data} />
+        <Sidebar />
+        <Wall data={data} />
         <Footer />
       </div>
     );

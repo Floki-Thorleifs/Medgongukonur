@@ -14,7 +14,7 @@ class Sidebar extends Component {
       if (data) {
         return <h3 className="sidebar__item">{data.name}</h3>;
       }
-      return <h3 className="sidebar__item">User</h3>;
+      return <h3 className="sidebar__item">Meðgöngukonur</h3>;
     }
     return (
       <div className="sidebar">
