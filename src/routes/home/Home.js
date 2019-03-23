@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 import Sidebar from '../../components/sidebar/Sidebar'
 import Footer from '../../components/footer/Footer'
-//import Post from '../../components/post/Post';
+import Post from '../../components/post/Post';
 
 //todo hafa token a signin
 class Home extends Component {
@@ -11,6 +11,7 @@ class Home extends Component {
 		return (
 			<div>
 				<Sidebar />
+				<Post />
 				<Footer />
 			</div>
 		);
