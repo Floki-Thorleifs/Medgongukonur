@@ -1,4 +1,4 @@
-const baseurl = process.env.REACT_APP_SERVICE_URL;
+const baseurl = 'http://127.0.0.1:3020';
 
 //todo gera get, delete, fetch, patch, post
 
@@ -21,12 +21,12 @@ export async function get(endpoint) {
     return { result, status: response.status };
   }
 
-
-  export async function post2(endpoint) {
+  export async function post2(endpoint, data) {
     const url = `${baseurl}${endpoint}`;
   
     const token = window.localStorage.getItem('token');
     const options = {
+      body: JSON.stringify(data),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -37,8 +37,8 @@ export async function get(endpoint) {
       options.headers['Authorization'] = `Bearer ${token}`;
     }
     const response = await fetch(url, options); 
-    const result = await response;
-    return result;
+    const result = await response.json();
+    return { result, status: response.status };
   }
   
 

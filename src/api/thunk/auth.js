@@ -8,14 +8,21 @@ export const loginUser = (username, password) => {
     let user;
     try {
       user = await post2('/login',{username,password});
+      console.log(username,password)
+      console.log(user)
     } catch (e) {
+        console.log('CATCH BITCH')
       return dispatch(loginError(e))
     }
-    dispatch(receiveLogin());
 
     if (user.status === 200) {
       localStorage.setItem('user', username);
+    }else if(user.status === 401){
+        console.log('fer hingad')
+        return dispatch(loginError(user.result.error))
     }
+    dispatch(receiveLogin());
+
   }
 }
 

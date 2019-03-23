@@ -9,7 +9,6 @@ class Login extends Component {
   render() {
     return (
       <div>
-        <Sidebar />
         <SignIn />
         <Footer />
       </div>
