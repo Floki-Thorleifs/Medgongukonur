@@ -19,7 +19,7 @@ class Sidebar extends Component {
     return (
       <div className="sidebar">
         <div className="sidebar__heading">{getData()}</div>
-        <Link to="/login" alt="Home" className="sidebar__item active">
+        <Link to="/" alt="login" className="sidebar__item active">
           Login
         </Link>
         <Link to="/" alt="Home" className="sidebar__item">
@@ -28,7 +28,7 @@ class Sidebar extends Component {
         <Link to="/" alt="Home" className="sidebar__item">
           General info
         </Link>
-        <Link to="/" alt="Home" className="sidebar__item">
+        <Link to="/chat" alt="Chat" className="sidebar__item">
           Chat
         </Link>
       </div>
