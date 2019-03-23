@@ -5,7 +5,17 @@ class Day extends Component {
   static propTypes = {
     data: PropTypes.object
   };
+
+  state = {
+    isClicked: false
+  };
   render() {
+    console.log(this.state.isClicked);
+    const handleClick = () => {
+      this.setState(prevState => ({
+        isClicked: !prevState.isClicked
+      }));
+    };
     const { data } = this.props;
     const results = data.data.map((i, index) => {
       return (
@@ -15,13 +25,19 @@ class Day extends Component {
         </li>
       );
     });
+    if (!this.state.isClicked) {
+      return (
+        <div className="testResults__day">
+          <h3 onClick={handleClick}>{data.date}</h3>
+        </div>
+      );
+    }
     return (
       <div className="testResults__day">
-        <h3>{data.date}</h3>
+        <h3 onClick={handleClick}>{data.date}</h3>
         <ul className="tests">{results}</ul>
       </div>
     );
   }
 }
-
 export default Day;
