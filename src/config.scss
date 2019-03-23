@@ -1,8 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900|Open+Sans:400,600,700|Raleway:400,500,700');
+
+/*
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
+*/
+
 $max-width: 1200px;
 $gutter: 20px;
 
-$font-main: Lora, "Times New Roman", serif;
-$font-heading: "Roboto Mono", "Courier New", monospace;
+$font-main:'Open Sans', "Times New Roman", sans-serif;
+$font-heading: 'Raleway', sans-serif;
+$accent: #13B1CE;
+$color-sidebar: #ffffff;
 
 @mixin row() {
   display: flex;
