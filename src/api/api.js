@@ -1,4 +1,4 @@
-const baseurl = 'http://127.0.0.1:3020';
+const baseurl = 'http://pregnate.herokuapp.com/';
 
 //todo gera get, delete, fetch, patch, post
 
