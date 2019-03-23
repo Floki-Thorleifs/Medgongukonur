@@ -1,0 +1,38 @@
+{
+  "name": "medgongukonur",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Floki-Thorleifs/Medgongukonur.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Floki-Thorleifs/Medgongukonur/issues"
+  },
+  "homepage": "https://github.com/Floki-Thorleifs/Medgongukonur#readme",
+  "dependencies": {
+    "react": "^16.8.5",
+    "react-dom": "^16.8.5",
+    "react-helmet": "^5.2.0",
+    "react-redux": "^6.0.1",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^2.1.8",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
