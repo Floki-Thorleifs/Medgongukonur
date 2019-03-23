@@ -42,7 +42,6 @@ class SignIn extends Component {
   render() {
     const { username, password } = this.state;
     const { isFetching, isAuthenticated } = this.props;
-
     if (isAuthenticated) {
       return (
         <div>
