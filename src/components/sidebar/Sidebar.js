@@ -16,14 +16,11 @@ class Sidebar extends Component {
 			}
 			return <h3 className="sidebar__item">User</h3>;
 		}
-
 		return (
 			<div className="sidebar">
-				<div className="sidebar__heading">
-					<h3>{getData()}</h3>
-				</div>
-				<Link href="/" alt="Home" className="sidebar__item active">
-					Home
+				<div className="sidebar__heading">{getData()}</div>
+				<Link to="/login" alt="Home" className="sidebar__item active">
+					Login
         </Link>
 				<Link to="/" alt="Home" className="sidebar__item">
 					My info
