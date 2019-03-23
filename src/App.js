@@ -6,6 +6,7 @@ import { Route, Switch, withRouter } from 'react-router-dom';
 import Home from './routes/home';
 import Chat from './routes/home';
 import Login from './routes/login';
+import Blood from './routes/tests';
 
 class App extends Component {
   render() {
@@ -15,9 +16,9 @@ class App extends Component {
 
         <div>
           <Switch location={this.props.location}>
-            <Route path="/" exact component={Home} />
+            <Route path="/" exact component={Login} />
             <Route path="/chat" component={Chat} />
-            <Route path="/login" exact component={Login} />
+            <Route path="/tests" exact component={Blood} />
           </Switch>
         </div>
       </main>
