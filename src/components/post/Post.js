@@ -8,28 +8,41 @@ class Post extends Component {
   };
   render() {
     const { data } = this.props;
-    function get() {
-      if (data) {
-        return <h3 className="sideBar__item">{data.name}</h3>;
-      }
-      return <h3 className="sideBar__item">User</h3>;
-    }
 
-    function getName() {
+    function getAuth() {
       if (data) {
+        const comments = data.comments.map((i, index) => {
+          return (
+            <p className="postItem__comments--single" key={index}>
+              {i}
+            </p>
+          );
+        });
         return (
-          <Link to={data.name} className="postItem__name">
-            {data.name}
-          </Link>
+          <div className="postItem">
+            <Link to={data.name} className="postItem__name">
+              {data.name}
+            </Link>
+            <h3 className="postItem__content">{data.content}</h3>
+            <div className="postItem__comments">{comments}</div>
+          </div>
         );
       }
       return (
-        <Link to="/" className="postItem__name">
-          Unknown
-        </Link>
+        <div className="postItem">
+          <Link to="/" className="postItem__name">
+            Unknown
+          </Link>
+          <h3 className="postItem__content">Question?</h3>
+          <div className="postItem__comments">
+            <p className="postItem__comments--single">
+              This is a stupid Question
+            </p>
+          </div>
+        </div>
       );
     }
-    return <div className="postItem">{getName()}</div>;
+    return <div>{getAuth()}</div>;
   }
 }
 
