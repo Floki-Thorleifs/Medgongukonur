@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Helmet from 'react-helmet';
-import { Route, Switch, withRouter } from 'react-router-dom'
+import { Route, Switch, withRouter } from 'react-router-dom';
 
 import Home from './routes/home';
+import Login from './routes/login';
 
 class App extends Component {
   render() {
@@ -14,18 +15,18 @@ class App extends Component {
         <div>
           <Switch location={this.props.location}>
             <Route path="/" exact component={Home} />
+            <Route path="/login" exact component={Login} />
           </Switch>
         </div>
-
       </main>
     );
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   return {
-    ...state,
-  }
-}
+    ...state
+  };
+};
 
 export default withRouter(connect(mapStateToProps)(App));
