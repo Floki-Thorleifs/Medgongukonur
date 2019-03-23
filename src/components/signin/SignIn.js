@@ -45,7 +45,7 @@ class SignIn extends Component {
     if (isAuthenticated) {
       return (
         <div>
-          <Route exact path="/login" render={() => <Redirect to="/" />} />
+          <Route exact path="/" render={() => <Redirect to="/chat" />} />
         </div>
       );
     }
