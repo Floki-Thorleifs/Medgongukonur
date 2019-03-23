@@ -5,7 +5,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux';
 
-import rootReducer from './api/reducers'
+import rootReducer from './api'
 import App from './App';
 
 const initialState = {};

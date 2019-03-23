@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { Redirect, Route } from 'react-router-dom';
+import {connect} from 'react-redux';
+import { loginUser } from '../../api/thunk/auth';
+
 
 import './SignIn.scss';
 
@@ -12,7 +15,10 @@ class SignIn extends Component {
 
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      isFetching: false,
+      isAuthenticated:false,
+      message:null
     };
   }
 
@@ -30,13 +36,12 @@ class SignIn extends Component {
     const { dispatch } = this.props;
     const { username, password } = this.state;
     console.log(username, password);
-    //dispatch(loginUser(username, password));
+    dispatch(loginUser(username, password));
   };
 
   render() {
     const { username, password } = this.state;
     const { isFetching, isAuthenticated } = this.props;
-
     if (isAuthenticated) {
       return (
         <div>
@@ -86,4 +91,4 @@ const mapStateToProps = state => {
     message: state.auth.message
   };
 };
-export default SignIn;
+export default connect(mapStateToProps)(SignIn);
