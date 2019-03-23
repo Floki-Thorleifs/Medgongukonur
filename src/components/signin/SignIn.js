@@ -46,8 +46,8 @@ class SignIn extends Component {
     }
     return (
       <div className="login">
+        <p className="login__login">Log in to your account</p>
         <div className="login__input">
-          <label htmlFor="inputUsername">Username</label>
           <input
             name="username"
             id="inputUsername"
@@ -61,7 +61,6 @@ class SignIn extends Component {
           />
         </div>
         <div className="login__input">
-          <label htmlFor="inputPassword">Password</label>
           <input
             name="password"
             type="password"
