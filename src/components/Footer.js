@@ -1,13 +1,9 @@
 import React, { Component } from 'react';
 
-
 class Footer extends Component {
-	render(){
-		return(
-		<div>
-  </div>
-  );
-	}
+  render() {
+    return <footer className="footer">Boolean Rhapsody</footer>;
+  }
 }
 
 export default Footer;
