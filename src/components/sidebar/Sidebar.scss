@@ -1,1 +1,39 @@
 @import "../../config.scss";
+
+.sidebar {
+  // position: relative;
+
+  
+  background: $accent;
+  height: 100vw;
+  width: 30%;
+  margin-left: -8px;
+  margin-top: -8px;
+  font-family: $font-heading;
+
+  &__heading {
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    text-align: center;
+  }
+
+  &__heading h3 {
+    margin-top: 2 * $gutter;
+    color: $color-sidebar;
+    font-family: $font-heading;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: $gutter;
+    color: $color-sidebar;
+    text-decoration: none;
+  }
+}
+
+.active {
+  font-weight: 700;
+} 

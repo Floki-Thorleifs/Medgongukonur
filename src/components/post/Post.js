@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
+import './Post.scss';
+
 class Post extends Component {
   static propTypes = {
     data: PropTypes.object
