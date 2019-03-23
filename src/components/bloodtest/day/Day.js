@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import './../bloodtest.scss';
+
 class Day extends Component {
   static propTypes = {
     data: PropTypes.object
@@ -10,15 +12,24 @@ class Day extends Component {
     const results = data.data.map((i, index) => {
       return (
         <li className="testResults__day__test" key={index}>
-          <p>Blóðsykur: {i.data}</p>
-          <p>Tími: {i.time}</p>
+          <div className="testResults__day__content">
+            <p className="testResults__day__time">{i.time}</p>
+            <p>{i.data} mmol</p>
+            <p>{data.normal}</p>
+          </div>
         </li>
       );
     });
     return (
       <div className="testResults__day">
         <h3>{data.date}</h3>
-        <ul className="tests">{results}</ul>
+        <ul className="tests">
+          <div className="testResults__day__heading">
+            <p>Tími</p>
+            <p>Blóðsykur</p>
+          </div>
+          {results}
+        </ul>
       </div>
     );
   }

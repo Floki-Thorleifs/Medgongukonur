@@ -11,7 +11,9 @@ class Bloodtest extends Component {
 		const days = data.map((i, index) => {
 			return <Day data={i} key={index} />;
 		});
-		return <div className="testResults">{days}</div>;
+		return (
+			<div className="testResults">{days}</div>
+		);
 	}
 }
 

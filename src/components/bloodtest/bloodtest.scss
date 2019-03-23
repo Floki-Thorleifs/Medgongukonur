@@ -1,1 +1,56 @@
 @import "../../config.scss";
+
+.tests {
+  margin-left: -($gutter * 2);
+}
+
+.testResults {
+  margin-left: 270px;
+
+  &__day {
+    font-family: $font-footer;
+
+    &__test {
+      font-weight: 300;
+    }
+
+    &__test {
+      
+    }
+
+    &__heading {
+      display: flex;
+      flex-direction: row;
+      font-weight: 700;
+    }
+    
+    &__content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    &__time {
+      color: $accent;
+    }
+  }
+
+  &__day h3 {
+    font-weight: 700;
+  }
+
+  &__day ul { 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__day li {
+    display: flex;
+    flex-direction: row;
+  }
+
+  &__day p {
+    margin-right: $gutter * 2;
+  }
+
+}
