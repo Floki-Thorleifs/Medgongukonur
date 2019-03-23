@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import Home from './routes/home';
+import Chat from './routes/home';
 import Login from './routes/login';
 
 class App extends Component {
@@ -15,6 +16,7 @@ class App extends Component {
         <div>
           <Switch location={this.props.location}>
             <Route path="/" exact component={Home} />
+            <Route path="/chat" component={Chat} />
             <Route path="/login" exact component={Login} />
           </Switch>
         </div>

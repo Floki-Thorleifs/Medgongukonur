@@ -21,25 +21,69 @@ class Post extends Component {
           );
         });
         return (
-          <div className="postItem">
-            <Link to={data.name} className="postItem__name">
-              {data.name}
-            </Link>
-            <h3 className="postItem__content">{data.content}</h3>
-            <div className="postItem__comments">{comments}</div>
-          </div>
+          <div class="container">
+            <div className="postItem">
+              <Link to={data.name} className="postItem__info">
+                <ul>
+                  <li className="postItem__name">{data.name}</li>
+                  <li>{data.date}</li>
+                  <li>{data.time}</li>
+                </ul>
+              </Link>
+              <div className="postItem__post">
+                <div className="postItem__question">
+                  <h3 className="postItem__content">{data.content}</h3>
+                </div>
+                <div className="postItem__comments">{comments}</div>
+              </div>
+            </div>
+
+            <div className="postItem">
+              <Link to={data.name} className="postItem__info">
+                <ul>
+                  <li className="postItem__name">{data.name}</li>
+                  <li>{data.date}</li>
+                  <li>{data.time}</li>
+                </ul>
+              </Link>
+              <div className="postItem__post">
+                <div className="postItem__question">
+                  <h3 className="postItem__content">{data.content}</h3>
+                </div>
+                <div className="postItem__comments">{comments}</div>
+              </div>
+            </div>
+
+            <div className="postItem">
+              <Link to={data.name} className="postItem__info">
+                <ul>
+                  <li className="postItem__name">{data.name}</li>
+                  <li>{data.date}</li>
+                  <li>{data.time}</li>
+                </ul>
+              </Link>
+              <div className="postItem__post">
+                <div className="postItem__question">
+                  <h3 className="postItem__content">{data.content}</h3>
+                </div>
+                <div className="postItem__comments">{comments}</div>
+              </div>
+            </div>
+          </div >
         );
       }
       return (
-        <div className="postItem">
-          <Link to="/" className="postItem__name">
-            Unknown
+        <div class="container">
+          <div className="postItem">
+            <Link to="/" className="postItem__info">
+              Unknown
           </Link>
-          <h3 className="postItem__content">Question?</h3>
-          <div className="postItem__comments">
-            <p className="postItem__comments--single">
-              This is a stupid Question
+            <h3 className="postItem__content">Question?</h3>
+            <div className="postItem__comments">
+              <p className="postItem__comments--single">
+                This is a stupid Question
             </p>
+            </div>
           </div>
         </div>
       );
