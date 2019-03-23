@@ -1,12 +1,11 @@
 @import "../../config.scss";
 
 .sidebar {
-  // position: relative;
-
-  
+  position: fixed;
   background: $accent;
-  height: 100vw;
-  width: 30%;
+  height: 100%;
+  width: 20%;
+  min-width: 250px;
   margin-left: -8px;
   margin-top: -8px;
   font-family: $font-heading;
