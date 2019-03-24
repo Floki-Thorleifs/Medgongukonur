@@ -18,8 +18,6 @@ class Sidebar extends Component {
       return <h3 className="sidebar__item">Meðgöngukonur</h3>;
     }
 
-
-
     return (
       <div className="sidebar">
         <div className="sidebar__wrapper">
@@ -30,8 +28,8 @@ class Sidebar extends Component {
           <Link to="/tests" alt="tests" className="sidebar__item">
             My info
         </Link>
-        <Link to="/info" alt="info" className="sidebar__item">
-          General info
+          <Link to="/info" alt="info" className="sidebar__item">
+            General info
         </Link>
           <Link to="/chat" alt="Chat" className="sidebar__item">
             Chat

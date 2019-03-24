@@ -31,7 +31,13 @@ class Users extends Component {
     const users = tempUsers.map((i, index) => {
       return <User data={i.dataArr} name={i.name} key={index} />;
     });
-    return <React.Fragment>{users}</React.Fragment>;
+    return (
+      <React.Fragment>
+        <div class="userwrapper">
+          {users}
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
