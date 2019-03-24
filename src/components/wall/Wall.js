@@ -4,7 +4,7 @@ import Post from '../post/Post';
 import { fetchChat } from '../../api/thunk/chat';
 import { connect } from 'react-redux';
 
-//import './Wall.scss';
+import './Wall.scss';
 
 class Wall extends Component {
   constructor(props) {
@@ -12,18 +12,36 @@ class Wall extends Component {
     this.state = {
       isLoading: false,
       chat: '',
-      error: null
+      error: null,
+      question: ''
     };
   }
+  state = {
+    isClicked: false
+  };
   componentWillMount() {
     const { dispatch } = this.props;
     console.log();
     dispatch(fetchChat('/chat'));
   }
 
+  handleClick = () => {
+    this.setState(prevState => ({
+      isClicked: !prevState.isClicked
+    }));
+  };
+
+  handleInputChange = e => {
+    const { name, value } = e.target;
+    console.log(name, value);
+
+    if (name) {
+      this.setState({ [name]: value });
+    }
+  };
+
   render() {
     const { chat } = this.props;
-    console.log(chat);
     let posts;
     if (!(Object.keys(chat).length === 0)) {
       posts = chat.map((i, index) => {
@@ -33,7 +51,19 @@ class Wall extends Component {
       posts = <h3 className="nothing">Nothing here</h3>;
     }
 
-    return <div className="question">{posts}</div>;
+    return (
+      <React.Fragment>
+        <div className="question">
+          <textarea
+            className="submitQuestion"
+            name="question"
+            id="question"
+            onChange={this.handleInputChange}
+          />
+          {posts}
+        </div>
+      </React.Fragment>
+    );
   }
 }
 
