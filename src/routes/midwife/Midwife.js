@@ -2,19 +2,20 @@ import React, { Component } from 'react';
 
 import Sidebar from '../../components/sidebar/Sidebar';
 import Footer from '../../components/footer/Footer';
-import BloodTest from '../../components/bloodtest/Bloodtest';
+import Users from '../../components/users/Users';
+
+//import '../../components/signin/SignIn.scss';
 
 //todo hafa token a signin
-class Blood extends Component {
+class Midwife extends Component {
   render() {
     return (
-      <div>
-        <Sidebar />
-        <BloodTest />
+      <div className="loginContainer">
+        <Users />
         <Footer />
       </div>
     );
   }
 }
 
-export default Blood;
+export default Midwife;

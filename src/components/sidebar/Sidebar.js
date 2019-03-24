@@ -22,7 +22,7 @@ class Sidebar extends Component {
         <Link to="/" alt="login" className="sidebar__item active">
           Login
         </Link>
-        <Link to="/" alt="Home" className="sidebar__item">
+        <Link to="/tests" alt="tests" className="sidebar__item">
           My info
         </Link>
         <Link to="/" alt="Home" className="sidebar__item">
