@@ -59,23 +59,6 @@ export default connect(mapStateToProps)(Bloodtest);
 */
 
 class Bloodtest extends Component {
-<<<<<<< HEAD
-    constructor(props) {
-        super(props);    
-        this.state = {
-            isLoading: false,
-            blood: null,
-            error: null,
-            date: '',
-            time: '',
-            result: '',
-
-    }
-}
-state = {
-    isClicked: false
-  };
-=======
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -90,7 +73,6 @@ state = {
 	state = {
 		isClicked: false
 	};
->>>>>>> 2c0d5d644e953fa31822b847b847b79fc9ed7d24
 
 	handleInputChange = e => {
 		const { name, value } = e.target;
@@ -112,7 +94,6 @@ state = {
 		const { dispatch } = this.props;
 		const { date, time, result } = this.state;
 
-<<<<<<< HEAD
   };
 
   componentDidMount() {
@@ -122,9 +103,6 @@ state = {
     dispatch(fetchBlood('/'));
     }
   };
-=======
-	};
->>>>>>> 2c0d5d644e953fa31822b847b847b79fc9ed7d24
 
 	componentDidMount() {
 		const { dispatch } = this.props;
@@ -217,7 +195,6 @@ state = {
 }
 
 const mapStateToProps = state => {
-<<<<<<< HEAD
     return {
       isLoading: state.blood.isLoading,
       blood: state.blood.blood,
@@ -225,12 +202,4 @@ const mapStateToProps = state => {
       isAuthenticated: true,
     };
   };
-=======
-	return {
-		isLoading: state.blood.isLoading,
-		blood: state.blood.blood,
-		error: state.blood.error
-	};
-};
->>>>>>> 2c0d5d644e953fa31822b847b847b79fc9ed7d24
 export default connect(mapStateToProps)(Bloodtest);
