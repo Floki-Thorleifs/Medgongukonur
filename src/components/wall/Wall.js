@@ -54,12 +54,16 @@ class Wall extends Component {
     return (
       <React.Fragment>
         <div className="question">
+          <h2 className="question__question">Submit a question</h2>
           <textarea
             className="submitQuestion"
             name="question"
             id="question"
             onChange={this.handleInputChange}
           />
+          <div className="question__button">
+            <button className="question__submit">Submit</button>
+          </div>
           {posts}
         </div>
       </React.Fragment>

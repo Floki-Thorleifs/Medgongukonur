@@ -20,12 +20,13 @@
   justify-content: flex-end;
   margin-top: $gutter;
   font-family: $font-footer;
+  max-width: 600px;
+  color: #1a1a1a;
 
   &__post {
     display: flex;
     flex-direction: column;
     min-width: 400px;
-    width: 60%;
     border-bottom: 1px solid #ededed;
   }
 
@@ -64,12 +65,23 @@
   }
 
   &__comments--single {
-    border-bottom: 1px solid #ededed;
+    border-bottom: 1px solid #c7c7c7;
     padding: 20px;
     margin-bottom: 2px;
   }
-}
 
-.postItem:last-child {
-  margin-bottom: 15%;
+  &__comment {
+    font-family: $font-footer;
+    font-size: 1rem;
+    padding: $gutter / 2;
+    border: 1px solid #c7c7c7;
+    outline: none;
+    resize: none;
+    overflow: none;
+    margin-top: 2px;
+  }
+
+  &__created {
+    font-weight: 700;
+  }
 }

@@ -29,7 +29,7 @@ class Post extends Component {
           return (
             <div className="postItem__comments--single" key={index}>
               <p>{i.comment}</p>
-              <p>
+              <p className="postItem__created">
                 {timeMaker(i.created)} - {dateMaker(i.created)}
               </p>
             </div>
@@ -46,7 +46,13 @@ class Post extends Component {
                   </p>
                 </div>
                 <div className="postItem__comments">{comments}</div>
-                <textarea type="text" name="comment" id="comments" />
+                <textarea
+                  type="text"
+                  name="comment"
+                  id="comments"
+                  placeholder="Leave a comment"
+                  className="postItem__comment"
+                />
               </div>
             </div>
           </div>

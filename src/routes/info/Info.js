@@ -9,7 +9,7 @@ class Info extends Component {
 
     return (
       <div className="chatwrapper">
-        <Sidebar site="info"/>
+        <Sidebar site="info" />
         <GeneralInfo />
         <Footer />
       </div>

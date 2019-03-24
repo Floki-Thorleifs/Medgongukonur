@@ -60,8 +60,8 @@ class Day extends Component {
           <h3 onClick={handleClick}>{data.date}</h3>
           <ul className="tests">
             <div className="tests__heading">
-              <p className="tests__element">Tími</p>
-              <p className="tests__element">Blóðsykur</p>
+              <p className="tests__element">Time</p>
+              <p className="tests__element">Bloodsugar</p>
             </div>
             <div className="tests__results">{results}</div>
           </ul>

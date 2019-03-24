@@ -12,7 +12,7 @@ class Blood extends Component {
   render() {
     return (
       <div className="bloodwrapper">
-        <Sidebar />
+        <Sidebar site="tests" />
         <div className="wrapwrap">
           <BloodTest />
           <Footer />

@@ -20,12 +20,12 @@ class UserResults extends Component {
     var hours = "0" + currentDate.getHours();
     var minutes = currentDate.getMinutes();
 
-    var dateString = date + "-" +(month + 1) + "-" + year + "-" + hours + ":" + minutes;
+    var dateString = date + "-" + (month + 1) + "-" + year + "-" + hours + ":" + minutes;
 
     return (
       <div className="bloodsugar">
-        <p>Blood sugar: {blood.result + 'mmol'}</p>
-        <p>Tími: {dateString}</p>
+        <p>{blood.result + 'mmol'}</p>
+        <p className="bloodsugar__time">{dateString}</p>
       </div>
     );
   }
