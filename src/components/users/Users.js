@@ -2,14 +2,31 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import User from './user/User';
 import { create } from 'domain';
+import {connect} from 'react-redux';
+import { fetchLjos } from '../../api/thunk/ljos';
+
 
 //import './Wall.scss';
 
 class Users extends Component {
-  static propTypes = {
-    users: PropTypes.array
-  };
+  constructor(props) {
+		super(props);
+		this.state = {
+			isLoading: false,
+			ljos: null,
+			error: null,
+		};
+	}
+
+
+	componentDidMount() {
+    const { dispatch } = this.props;
+		dispatch(fetchLjos('/admin'));
+	}
   render() {
+    
+    const { ljos } = this.props;
+		console.log(ljos)
     const result = {
       result: '4.6',
       created: '2019'
@@ -40,5 +57,12 @@ class Users extends Component {
     );
   }
 }
-
-export default Users;
+const mapStateToProps = state => {
+	return {
+		isLoading: state.ljos.isLoading,
+		ljos: state.ljos.ljos,
+		error: state.ljos.error,
+		isAuthenticated: true
+	};
+};
+export default connect(mapStateToProps)(Users);
