@@ -18,10 +18,10 @@ class User extends Component {
         isClicked: !prevState.isClicked
       }));
     };
-
+    console.log(data);
     const { data, name } = this.props;
     const bloods = data.map((i, index) => {
-      console.log(i.name);
+      // console.log(i.name);
       return <Day data={i.bloodtests} name={i.date} key={index} />;
     });
 

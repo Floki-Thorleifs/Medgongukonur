@@ -40,6 +40,7 @@
     flex-direction: column;
     height: fit-content;
     margin-top: $gutter;
+    margin-left: $gutter * 3;
     padding: 6px 12px;
     font-family: $font-footer;
     font-size: 1rem;
@@ -48,6 +49,12 @@
     background-image: none;
     border-radius: 4px;
     border: 1px solid $accent; 
+    max-width: 600px;
+    align-items: center;
+    transition: background-color 300ms ease-in-out;
+    &:hover {
+      background: #eeeeee;
+    }
   }
 }
 
@@ -82,7 +89,6 @@
   border-top: 1px solid #d4d4d4;
   margin-top: $gutter * 2;
   margin-left: $gutter * 3;
-
   &__day {
     font-family: $font-footer;
     border-bottom: 1px solid #eeeeee;

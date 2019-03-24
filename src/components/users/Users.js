@@ -28,6 +28,7 @@ class Users extends Component {
     const tempUsers = [tempUser, tempUser, tempUser];
 
     const { data } = this.props;
+
     const users = tempUsers.map((i, index) => {
       return <User data={i.dataArr} name={i.name} key={index} />;
     });
