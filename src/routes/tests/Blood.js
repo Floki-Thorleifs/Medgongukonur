@@ -10,7 +10,6 @@ import '../../components/bloodtest/bloodtest.scss';
 //todo hafa token a signin
 class Blood extends Component {
   render() {
-
     return (
       <div className="bloodwrapper">
         <Sidebar />
