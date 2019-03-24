@@ -79,7 +79,6 @@ class Bloodtest extends Component {
         console.log(i);
         return (
           <Fragment>
-            <h2 className="results__recent">Recent results</h2>
             <Day data={i} key={index} />
           </Fragment>
         );
@@ -148,7 +147,10 @@ class Bloodtest extends Component {
                 </button>
               </div>
             </div>
-            <div className="testResults">{days}</div>
+            <div className="testResults">
+              <h2 className="results__recent">Recent results</h2>
+              {days}
+            </div>
           </div>
         </React.Fragment>
       );
@@ -158,7 +160,10 @@ class Bloodtest extends Component {
         <button className="results__new" onClick={this.handleClick}>
           + Enter results
         </button>
-        <div className="testResults">{days}</div>
+        <div className="testResults">
+          <h2 className="results__recent">Recent results</h2>
+          {days}
+        </div>
       </React.Fragment>
     );
   }
