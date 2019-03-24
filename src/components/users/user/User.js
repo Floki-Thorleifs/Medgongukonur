@@ -18,26 +18,28 @@ class User extends Component {
         isClicked: !prevState.isClicked
       }));
     };
-
     const { data, name } = this.props;
+    console.log(`data = ${data}`);
+    console.log(`name = ${name}`);
+
     const bloods = data.map((i, index) => {
-      console.log(i.name);
+      // console.log(i.name);
       return <Day data={i.bloodtests} name={i.date} key={index} />;
     });
 
     if (this.state.isClicked) {
       return (
-        <div className="user">
+        <div className="user userbutton">
           <h3 onClick={handleClick} className="user__name">{name}</h3>
           <div className="user__data">
-            <ul>{bloods}</ul>
+            {bloods}
           </div>
         </div>
       );
     }
 
     return (
-      <div className="user">
+      <div className="user userbutton">
         <h3 onClick={handleClick} className="user__name">{name}</h3>
       </div>
     );

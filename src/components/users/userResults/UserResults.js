@@ -12,12 +12,21 @@ class UserResults extends Component {
   };
   render() {
     const { blood } = this.props;
+    const currentDate = new Date(blood.created);
+
+    var date = currentDate.getDate();
+    var month = currentDate.getMonth(); //Be careful! January is 0 not 1
+    var year = currentDate.getFullYear();
+    var hours = "0" + currentDate.getHours();
+    var minutes = currentDate.getMinutes();
+
+    var dateString = date + "-" +(month + 1) + "-" + year + "-" + hours + ":" + minutes;
 
     return (
-      <li className="user__result__list__item">
-        <p>Blóðsykur: {blood.result}</p>
-        <p>Tími: {blood.created}</p>
-      </li>
+      <div className="bloodsugar">
+        <p>Blood sugar: {blood.result + 'mmol'}</p>
+        <p>Tími: {dateString}</p>
+      </div>
     );
   }
 }
