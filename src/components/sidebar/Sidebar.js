@@ -1,13 +1,20 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import {logout} from '../../api/thunk/auth'
 import './Sidebar.scss';
 
 class Sidebar extends Component {
   static propTypes = {
     data: PropTypes.object
   };
+
+  handleLogout = () =>{
+    const {dispatch} = this.props;
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    dispatch(logout());
+  }
   render() {
     const { data } = this.props;
 
@@ -22,7 +29,7 @@ class Sidebar extends Component {
       <div className="sidebar">
         <div className="sidebar__wrapper">
           <div className="sidebar__heading">{getData()}</div>
-          <Link to="/" alt="login" className="sidebar__item active">
+          <Link to="/" onClick={this.handleLogout} alt="login" className="sidebar__item active">
             Log Out
         </Link>
           <Link to="/tests" alt="tests" className="sidebar__item">
