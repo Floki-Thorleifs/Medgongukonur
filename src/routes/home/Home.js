@@ -9,7 +9,7 @@ class Home extends Component {
   render() {
     return (
       <div>
-        <Sidebar />
+        <Sidebar site="info" />
         <Footer />
       </div>
     );
