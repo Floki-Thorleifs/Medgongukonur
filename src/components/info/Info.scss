@@ -38,4 +38,12 @@
   &__subheading + &__paragraph {
     margin-top: 0.5rem;
   }
+
+  &__list {
+    font-weight: 200;
+  }
+
+  &__list li {
+    line-height: 2rem;
+  }
 }
