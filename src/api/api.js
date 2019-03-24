@@ -1,5 +1,5 @@
 const baseurl = 'http://pregnate.herokuapp.com';
-
+//const baseurl = 'http://127.0.0.1:3070'
 //todo gera get, delete, fetch, patch, post
 
 export async function get(endpoint) {
