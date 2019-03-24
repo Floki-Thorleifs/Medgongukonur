@@ -38,6 +38,8 @@
   &__new {
     display: flex;
     flex-direction: column;
+    align-self: flex-start;
+    width: fit-content;
     height: fit-content;
     margin-top: $gutter;
     margin-left: $gutter * 3;

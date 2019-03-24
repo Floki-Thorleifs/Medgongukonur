@@ -36,8 +36,8 @@ class Wall extends Component {
     e.preventDefault();
     this.handleClick();
     const { dispatch } = this.props;
-    const {question} =this.state;
-    dispatch(createChat('/chat/question', {question}));
+    const { question } = this.state;
+    dispatch(createChat('/chat/question', { question }));
 
 
   };
@@ -66,14 +66,17 @@ class Wall extends Component {
     return (
       <React.Fragment>
         <div className="question">
+          <h2 className="question__question">Submit a question</h2>
           <textarea
-          value={this.state.question}
+            value={this.state.question}
             className="submitQuestion"
             name="question"
             id="question"
             onChange={this.handleInputChange}
           />
-          <Link to='/'><button>Submit</button></Link>
+          <div className="question__button">
+            <button className="question__submit">Submit</button>
+          </div>
           {posts}
         </div>
       </React.Fragment>

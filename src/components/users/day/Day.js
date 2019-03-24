@@ -25,16 +25,22 @@ class Day extends Component {
     if (this.state.isClicked) {
       return (
         <div className="user daybutton">
-          <h3 onClick={handleClick} className="user__name">{name}</h3>
+          <h3 onClick={handleClick} className="user__date">{name}</h3>
           <div className="user__data">
-            {bloods}
+            <div className="user__results">
+              <div className="user__heading">
+                <p className="user__element">Time</p>
+                <p className="user__element">Bloodsugar</p>
+              </div>
+              {bloods}
+            </div>
           </div>
         </div>
       );
     }
     return (
       <div className="user daybutton">
-        <h3 onClick={handleClick} className="user__name">{name}</h3>
+        <h3 onClick={handleClick} className="user__date">{name}</h3>
       </div>
     );
   }

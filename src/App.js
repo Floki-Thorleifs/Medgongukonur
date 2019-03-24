@@ -14,7 +14,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Helmet defaultTitle="Medgongukongur" />
+        <Helmet defaultTitle="Your Midwife" />
 
         <div>
           <Switch location={this.props.location}>

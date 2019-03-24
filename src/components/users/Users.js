@@ -23,7 +23,7 @@ class Users extends Component {
   }
   render() {
     const { ljos } = this.props;
-  
+
     console.log('ljos');
     console.log(ljos);
 
@@ -35,33 +35,33 @@ class Users extends Component {
       }
     }
 
-/*     const result = {
-      result: '4.6',
-      created: '2019'
-    };
-    const bloodtests = [result, result, result, result];
-    const stuff = {
-      date: '12.02.19',
-      bloodtests: bloodtests
-    };
-
-    const tempUser = {
-      name: 'siggi',
-      dataArr: [stuff, stuff, stuff]
-    };
-
-    const tempUsers = [tempUser, tempUser, tempUser];
-
-    const { data } = this.props; */
-/* 
-    const users = data.map((i, index) => {
-      return <User data={i.dataArr} name={i.name} key={index} />;
-    });  */
+    /*     const result = {
+          result: '4.6',
+          created: '2019'
+        };
+        const bloodtests = [result, result, result, result];
+        const stuff = {
+          date: '12.02.19',
+          bloodtests: bloodtests
+        };
+    
+        const tempUser = {
+          name: 'siggi',
+          dataArr: [stuff, stuff, stuff]
+        };
+    
+        const tempUsers = [tempUser, tempUser, tempUser];
+    
+        const { data } = this.props; */
+    /* 
+        const users = data.map((i, index) => {
+          return <User data={i.dataArr} name={i.name} key={index} />;
+        });  */
 
 
     return (
       <React.Fragment>
-        <div class="userwrapper">{user}</div>
+        <div className="userwrapper">{user}</div>
       </React.Fragment>
     );
   }

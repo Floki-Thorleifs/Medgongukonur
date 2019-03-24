@@ -4,12 +4,9 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  // width: 20%;
-  min-width: 310px;
-  // width: 290px;
+  min-width: 270px;
   margin-left: -8px;
   margin-top: -8px;
-  // padding-right: 8px;
   background: $accent;
   font-family: $font-heading;
 
@@ -39,7 +36,7 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-top: $gutter;
-    margin-right: $gutter * 2;
+    margin-right: $gutter;
     color: $color-sidebar;
     text-decoration: none;
   }

@@ -11,8 +11,8 @@
   flex-direction: column;
   background: #ededed;
   width: 80%;
-  border-radius: 6px;
-  border: 1px #d4d4d4 solid;
+  border-radius: 3px;
+  //border: 1px #d4d4d4 solid;
   margin: $gutter * 2 auto 0;
   // padding: $gutter $gutter * 1.5;
   font-family: $font-footer;
@@ -21,35 +21,68 @@
   &__name {
     display: flex;
     flex-direction: row;
-    color: white;
-    // background: red;
+    color: rgb(34, 34, 34);
+    align-self: flex-start;
+    margin-left: $gutter;
+    padding: $gutter / 4;
+    font-size: 1.3rem;
+  }
+
+  &__name h3 {
+    display: flex;
+    align-self: flex-start;
+  }
+
+  &__date {
+    align-self: flex-start;
+    font-size: 1.2rem;
   }
 
   &__data {
     display: flex;
     flex-direction: column;
     padding-bottom: $gutter * 2;
-    // background: green;
     width: 100%;
   }
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 60%;
+    font-weight: 700;
+  }
+
+  &__element {
+    width: $gutter * 3;
+    justify-content: space-between;
+  }
+
+ /*  &__bloodsugar {
+    width: 60%;
+    justify-content: space-between;
+  } */
 }
 
 .bloodsugar {
-  // margin-left: $gutter * 2;
-  margin: 5px 15px;
-  border: solid 1px #d4d4d4;
-  border-radius: 6px;
-  background-color: #4b4d4d;
-  p {
-    margin-left: 20px;
-    color: white;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  margin: -10px 0px;
+  width: 60%;
+    justify-content: space-between;
+  
+  &__time {
+    color: $accent;
   }
 }
 
 .daybutton {
-  background-color: #717474;
+  background-color: #f1f1f1;
+  margin-top: 0;
+  margin-left: $gutter * 2;
 }
 
 .userbutton {
-  background-color: #4d9cb7;
+  background-color: #f1f1f1;
 }
