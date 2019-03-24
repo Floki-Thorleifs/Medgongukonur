@@ -10,12 +10,14 @@ class Sidebar extends Component {
   };
   render() {
     const { data } = this.props;
+
     function getData() {
       if (data) {
         return <h3 className="sidebar__item">{data.name}</h3>;
       }
       return <h3 className="sidebar__item">Meðgöngukonur</h3>;
     }
+
     return (
       <div className="sidebar">
         <div className="sidebar__heading">{getData()}</div>
