@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
+import {logout} from '../../api/thunk/auth'
 import './Sidebar.scss';
 
 class Sidebar extends Component {
   static propTypes = {
-    data: PropTypes.object
+    data: PropTypes.object,
+    site: PropTypes.string
   };
+
+  handleLogout = () =>{
+    const {dispatch} = this.props;
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    dispatch(logout());
+  }
   render() {
-    const { data } = this.props;
+    const { data, site } = this.props;
 
     function getData() {
       if (data) {
@@ -22,18 +30,36 @@ class Sidebar extends Component {
       <div className="sidebar">
         <div className="sidebar__wrapper">
           <div className="sidebar__heading">{getData()}</div>
-          <Link to="/" alt="login" className="sidebar__item active">
+          <Link to="/" onClick={this.handleLogout} alt="login" className="sidebar__item active">
             Log Out
-        </Link>
-          <Link to="/tests" alt="tests" className="sidebar__item">
+          </Link>
+          <Link
+            to="/tests"
+            alt="tests"
+            className={
+              site === 'tests' ? 'sidebar__item active' : 'sidebar__item'
+            }
+          >
             My info
-        </Link>
-          <Link to="/info" alt="info" className="sidebar__item">
+          </Link>
+          <Link
+            to="/info"
+            alt="info"
+            className={
+              site === 'info' ? 'sidebar__item active' : 'sidebar__item'
+            }
+          >
             General info
-        </Link>
-          <Link to="/chat" alt="Chat" className="sidebar__item">
+          </Link>
+          <Link
+            to="/chat"
+            alt="Chat"
+            className={
+              site === 'chat' ? 'sidebar__item active' : 'sidebar__item'
+            }
+          >
             Chat
-        </Link>
+          </Link>
         </div>
       </div>
     );

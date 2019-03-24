@@ -33,7 +33,15 @@ class Day extends Component {
               <p className="testResults__day__time tests__element">
                 {dateMaker(i.created)}
               </p>
-              <p className="testResults__day__data">{i.result} mmol</p>
+              <p
+                className={
+                  i.result < 7
+                    ? 'testResults__day__data'
+                    : 'testResults__day__data--danger'
+                }
+              >
+                {i.result} mmol
+              </p>
             </div>
           </div>
         </li>

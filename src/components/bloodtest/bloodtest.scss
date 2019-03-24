@@ -1,4 +1,4 @@
-@import "../../config.scss";
+@import '../../config.scss';
 
 .bloodwrapper {
   width: 100%;
@@ -21,7 +21,7 @@
   color: #292929;
 }
 
-.results { 
+.results {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -94,11 +94,13 @@
     border-bottom: 1px solid #eeeeee;
     display: flex;
     flex-direction: column;
-
+    &__data--danger {
+      color: red;
+    }
     &__test {
       font-weight: 300;
     }
-    
+
     &__content {
       display: flex;
       flex-direction: row;
@@ -124,7 +126,7 @@
     font-weight: 700;
   }
 
-  &__day ul { 
+  &__day ul {
     display: flex;
     flex-direction: column;
     list-style: none;
@@ -175,9 +177,10 @@
     color: #b4b4b8;
     border: 1px solid #cbcbd2;
     border-radius: 4px;
-    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
-    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -webkit-transition: border-color ease-in-out 0.15s,
+      box-shadow ease-in-out 0.15s;
+    -o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
   }
 
   input:focus {

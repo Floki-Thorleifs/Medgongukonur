@@ -12,11 +12,17 @@ class Blood extends Component {
   render() {
     return (
       <div className="bloodwrapper">
+<<<<<<< HEAD
         <Sidebar />
         <div className="wrapwrap">
           <BloodTest />
           <Footer />
         </div>
+=======
+        <Sidebar site="tests"/>
+        <BloodTest />
+        <Footer />
+>>>>>>> 0754b50ae84ecc2eb8b9af21d1f3213cd38b8345
       </div>
     );
   }

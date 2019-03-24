@@ -28,8 +28,8 @@ class Post extends Component {
         const comments = data.comments.map((i, index) => {
           return (
             <div className="postItem__comments--single" key={index}>
+              <p>{i.comment}</p>
               <p>
-                {i.comment} - Created:
                 {timeMaker(i.created)} - {dateMaker(i.created)}
               </p>
             </div>
@@ -38,15 +38,15 @@ class Post extends Component {
         return (
           <div className="container">
             <div className="postItem">
-              <ul>
-                <li>{dateMaker(data.created)}</li>
-                <li>{timeMaker(data.created)}</li>
-              </ul>
               <div className="postItem__post">
                 <div className="postItem__question">
                   <h3 className="postItem__content">{data.question}</h3>
+                  <p>
+                    {timeMaker(data.created)} - {dateMaker(data.created)}
+                  </p>
                 </div>
                 <div className="postItem__comments">{comments}</div>
+                <textarea type="text" name="comment" id="comments" />
               </div>
             </div>
           </div>
