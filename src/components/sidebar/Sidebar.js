@@ -22,19 +22,21 @@ class Sidebar extends Component {
 
     return (
       <div className="sidebar">
-        <div className="sidebar__heading">{getData()}</div>
-        <Link to="/" alt="login" className="sidebar__item active">
-          Log Out
+        <div className="sidebar__wrapper">
+          <div className="sidebar__heading">{getData()}</div>
+          <Link to="/" alt="login" className="sidebar__item active">
+            Log Out
         </Link>
-        <Link to="/tests" alt="tests" className="sidebar__item">
-          My info
+          <Link to="/tests" alt="tests" className="sidebar__item">
+            My info
         </Link>
-        <Link to="/info" alt="Home" className="sidebar__item">
+        <Link to="/info" alt="info" className="sidebar__item">
           General info
         </Link>
-        <Link to="/chat" alt="Chat" className="sidebar__item">
-          Chat
+          <Link to="/chat" alt="Chat" className="sidebar__item">
+            Chat
         </Link>
+        </div>
       </div>
     );
   }
