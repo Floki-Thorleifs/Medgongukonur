@@ -6,14 +6,14 @@ import './Post.scss';
 
 class Post extends Component {
   static propTypes = {
-    data: PropTypes.object
+    data: PropTypes.array
   };
   render() {
     const { data } = this.props;
-
     function getAuth() {
       if (data) {
-        const comments = data.comments.map((i, index) => {
+        console.log(data.comments);
+        const comments = data[0].comments.map((i, index) => {
           console.log(index);
           return (
             <p className="postItem__comments--single" key={index}>
@@ -24,16 +24,13 @@ class Post extends Component {
         return (
           <div className="container">
             <div className="postItem">
-              <Link to={data.name} className="postItem__info">
                 <ul>
-                  <li className="postItem__name">{data.name}</li>
-                  <li>{data.date}</li>
-                  <li>{data.time}</li>
+                  <li>{data.result}</li>
+                  <li>{data.created}</li>
                 </ul>
-              </Link>
               <div className="postItem__post">
                 <div className="postItem__question">
-                  <h3 className="postItem__content">{data.content}</h3>
+                  <h3 className="postItem__content">{data.question}</h3>
                 </div>
                 <div className="postItem__comments">{comments}</div>
               </div>
@@ -42,7 +39,7 @@ class Post extends Component {
         );
       }
       return (
-        <div class="container">
+        <div className="container">
           <div className="postItem">
             <Link to="/" className="postItem__info">
               Unknown

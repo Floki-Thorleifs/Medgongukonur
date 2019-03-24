@@ -72,6 +72,7 @@ class Bloodtest extends Component {
 
 	render() {
 		const { blood } = this.props;
+		console.log(blood)
 		let days;
 		console.log(blood, !(Object.keys(blood).length === 0));
 		if (!(Object.keys(blood).length === 0)) {
