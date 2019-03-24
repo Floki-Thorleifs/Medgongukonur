@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Post from '../post/Post';
-import { fetchChat } from '../../api/thunk/chat';
+import { fetchChat, createChat } from '../../api/thunk/chat';
 import { connect } from 'react-redux';
 
 import './Wall.scss';
@@ -31,6 +31,15 @@ class Wall extends Component {
     }));
   };
 
+  handleSubmit = async e => {
+    e.preventDefault();
+    this.handleClick();
+    const { dispatch } = this.props;
+    const {question} =this.state;
+    console.log(question)
+    dispatch(createChat('/chat/question', question));
+  };
+
   handleInputChange = e => {
     const { name, value } = e.target;
     console.log(name, value);
@@ -55,11 +64,13 @@ class Wall extends Component {
       <React.Fragment>
         <div className="question">
           <textarea
+          value={this.state.question}
             className="submitQuestion"
             name="question"
             id="question"
             onChange={this.handleInputChange}
           />
+          <button onClick={this.handleSubmit}>Submit</button>
           {posts}
         </div>
       </React.Fragment>

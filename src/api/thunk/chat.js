@@ -28,6 +28,7 @@ export const fetchChat = (endpoint) => {
 
 export const createChat = (endpoint, data) => {
   return async (dispatch) => {
+      console.log(data)
 
     dispatch(createChatRequest());
     let chat;
