@@ -6,28 +6,42 @@ import './Post.scss';
 
 class Post extends Component {
   static propTypes = {
-    data: PropTypes.array
+    data: PropTypes.object
   };
   render() {
+    const timeMaker = date => {
+      const timi = date.substring(11, 16);
+      return timi;
+    };
+    const dateMaker = date => {
+      console.log(date);
+      const year = date.substring(0, 4);
+      const month = date.substring(5, 7);
+      const day = date.substring(8, 10);
+      const boi = day + '-' + month + '-' + year;
+      return boi;
+    };
     const { data } = this.props;
     function getAuth() {
       if (data) {
         console.log(data.comments);
-        const comments = data[0].comments.map((i, index) => {
-          console.log(index);
+        const comments = data.comments.map((i, index) => {
           return (
-            <p className="postItem__comments--single" key={index}>
-              {i}
-            </p>
+            <div className="postItem__comments--single" key={index}>
+              <p>
+                {i.comment} - Created:
+                {timeMaker(i.created)} - {dateMaker(i.created)}
+              </p>
+            </div>
           );
         });
         return (
           <div className="container">
             <div className="postItem">
-                <ul>
-                  <li>{data.result}</li>
-                  <li>{data.created}</li>
-                </ul>
+              <ul>
+                <li>{dateMaker(data.created)}</li>
+                <li>{timeMaker(data.created)}</li>
+              </ul>
               <div className="postItem__post">
                 <div className="postItem__question">
                   <h3 className="postItem__content">{data.question}</h3>
