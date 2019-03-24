@@ -9,31 +9,42 @@ class Post extends Component {
     data: PropTypes.object
   };
   render() {
+    const timeMaker = date => {
+      const timi = date.substring(11, 16);
+      return timi;
+    };
+    const dateMaker = date => {
+      console.log(date);
+      const year = date.substring(0, 4);
+      const month = date.substring(5, 7);
+      const day = date.substring(8, 10);
+      const boi = day + '-' + month + '-' + year;
+      return boi;
+    };
     const { data } = this.props;
-
     function getAuth() {
       if (data) {
+        console.log(data.comments);
         const comments = data.comments.map((i, index) => {
-          console.log(index);
           return (
-            <p className="postItem__comments--single" key={index}>
-              {i}
-            </p>
+            <div className="postItem__comments--single" key={index}>
+              <p>
+                {i.comment} - Created:
+                {timeMaker(i.created)} - {dateMaker(i.created)}
+              </p>
+            </div>
           );
         });
         return (
           <div className="container">
             <div className="postItem">
-              <Link to={data.name} className="postItem__info">
-                <ul>
-                  <li className="postItem__name">{data.name}</li>
-                  <li>{data.date}</li>
-                  <li>{data.time}</li>
-                </ul>
-              </Link>
+              <ul>
+                <li>{dateMaker(data.created)}</li>
+                <li>{timeMaker(data.created)}</li>
+              </ul>
               <div className="postItem__post">
                 <div className="postItem__question">
-                  <h3 className="postItem__content">{data.content}</h3>
+                  <h3 className="postItem__content">{data.question}</h3>
                 </div>
                 <div className="postItem__comments">{comments}</div>
               </div>
@@ -42,7 +53,7 @@ class Post extends Component {
         );
       }
       return (
-        <div class="container">
+        <div className="container">
           <div className="postItem">
             <Link to="/" className="postItem__info">
               Unknown
