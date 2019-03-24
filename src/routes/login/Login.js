@@ -11,7 +11,7 @@ class Login extends Component {
   render() {
     return (
       <div className="loginContainer">
-        <SignIn />
+        <SignIn site="login" />
         <Footer />
       </div>
     );
