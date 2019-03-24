@@ -1,4 +1,4 @@
-import { get, post } from '../api';
+import { get, post2 } from '../api';
 
 import {
   fetchBloodRequest,
@@ -31,7 +31,7 @@ export const createBlood = (endpoint, data) => {
     let blood;
 
     try {
-      event = await post(endpoint, data);
+      blood = await post2(endpoint, data);
     } catch (e) {
       return dispatch(createBloodError(e))
     }
