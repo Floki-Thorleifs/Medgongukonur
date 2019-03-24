@@ -1,13 +1,14 @@
 @import "../../config.scss";
 
 .sidebar {
-  position: fixed;
-  background: $accent;
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
   width: 20%;
   min-width: 250px;
   margin-left: -8px;
   margin-top: -8px;
+  background: $accent;
   font-family: $font-heading;
 
   &__heading {

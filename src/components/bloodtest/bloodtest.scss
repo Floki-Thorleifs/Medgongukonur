@@ -1,1 +1,205 @@
 @import "../../config.scss";
+
+.bloodwrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.resultwrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  margin: $gutter * 2;
+  color: #292929;
+}
+
+.results { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+
+  &__recent {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-footer;
+    font-size: 2rem;
+  }
+
+  &__new {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: $gutter;
+    padding: 6px 12px;
+    font-family: $font-footer;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 2rem;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid $accent; 
+  }
+}
+
+.tests {
+  display: flex;
+  flex-direction: column;
+  margin-left: -($gutter * 2);
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__element {
+    width: $gutter * 4;
+  }
+
+  &__content {
+    width: 100%;
+  }
+}
+
+.testResults {
+  max-width: 600px;
+  width: 100%;
+  border-top: 1px solid #d4d4d4;
+  margin-top: $gutter * 2;
+  margin-left: $gutter * 3;
+
+  &__day {
+    font-family: $font-footer;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
+
+    &__test {
+      font-weight: 300;
+    }
+    
+    &__content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    &__time {
+      color: $accent;
+    }
+
+    &__normal {
+      text-align: end;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__day h3 {
+    font-weight: 700;
+  }
+
+  &__day ul { 
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+  }
+
+  &__day li {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.newTest {
+  max-width: 600px;
+  width: 100%;
+  margin-top: $gutter * 2;
+  margin-left: $gutter * 3;
+
+  &__input {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  &__label {
+    display: flex;
+    flex-direction: column;
+    width: $gutter * 4;
+    font-family: $font-footer;
+    font-size: 0.9rem;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  &__result {
+    display: flex;
+    flex-direction: column;
+    width: $gutter * 20;
+    align-items: flex-end;
+  }
+
+  input {
+    display: block;
+    margin-top: $gutter / 2;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    line-height: 2rem;
+    color: #b4b4b8;
+    border: 1px solid #cbcbd2;
+    border-radius: 4px;
+    -webkit-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  }
+
+  input:focus {
+    outline: none;
+    border-color: $accent;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  &__button {
+    display: flex;
+    flex-direction: column;
+    margin-top: $gutter;
+    margin-left: $gutter;
+    padding: 6px 12px;
+    font-family: $font-footer;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 2rem;
+    color: $color-sidebar;
+    background-color: $accent;
+    border-radius: 4px;
+    border: none;
+  }
+
+  &__button:hover {
+    cursor: pointer;
+  }
+}
+
+.cancel {
+  background: #ce6161;
+}
