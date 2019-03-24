@@ -10,10 +10,11 @@ import Users from '../../components/users/Users';
 class Midwife extends Component {
   render() {
     return (
-      <div className="loginContainer">
+      <React.Fragment>
+        <Sidebar />
         <Users />
         <Footer />
-      </div>
+      </React.Fragment>
     );
   }
 }
