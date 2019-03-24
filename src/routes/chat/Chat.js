@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import Sidebar from '../../components/sidebar/Sidebar'
 import Footer from '../../components/footer/Footer'
-import Post from '../../components/post/Post';
+import Wall from '../../components/wall/Wall';
 
 import '../../components/bloodtest/bloodtest.scss';
 
@@ -40,7 +40,7 @@ class Chat extends Component {
     return (
       <div className="chatwrapper">
         <Sidebar />
-        <Post data={data} />
+        <Wall data={data} />
         <Footer />
       </div>
     );

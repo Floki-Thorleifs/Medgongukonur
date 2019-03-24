@@ -1,62 +1,11 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Day from './day/Day';
-import { fetchBlood } from '../../api/thunk/blood';
+import { fetchBlood, createBlood} from '../../api/thunk/blood';
 import { connect } from 'react-redux';
 
 import './bloodtest.scss';
 
-
-/*
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Day from './day/Day';
-import { fetchBlood } from '../../api/thunk/blood';
-import {connect} from 'react-redux';
-
-
-
-import './bloodtest.scss';
-
-class Bloodtest extends Component {
-    constructor(props) {
-        super(props);    
-        this.state = {
-            isLoading: false,
-            blood: null,
-            error: null,
-    }
-}
-componentDidMount() {
-    const { dispatch } = this.props;
-    dispatch(fetchBlood('/'));
-  }
-
-
-	render() {
-        const { blood } = this.props;
-        if(blood.size){
-		const days = blood.map((i, index) => {
-			return <Day blood={i} key={index} />;
-		});
-        return <div className="testResults">{days}</div>;
-    }return( 
-    <React.Fragment>
-    <h1 className='testResults'>Nothing here to see</h1>
-    </React.Fragment>);
-
-	}
-}
-const mapStateToProps = state => {
-    return {
-      isLoading: state.blood.isLoading,
-      blood: state.blood.blood,
-      error: state.blood.error
-    };
-  };
-export default connect(mapStateToProps)(Bloodtest);
-
-*/
 
 class Bloodtest extends Component {
 	constructor(props) {
@@ -65,7 +14,7 @@ class Bloodtest extends Component {
 			isLoading: false,
 			blood: null,
 			error: null,
-			date: '',
+			dates: '',
 			time: '',
 			result: '',
 		}
@@ -76,6 +25,7 @@ class Bloodtest extends Component {
 
 	handleInputChange = e => {
 		const { name, value } = e.target;
+		console.log(name,value)
 
 		if (name) {
 			this.setState({ [name]: value });
@@ -92,9 +42,30 @@ class Bloodtest extends Component {
 		e.preventDefault();
 		this.handleClick();
 		const { dispatch } = this.props;
-		const { date, time, result } = this.state;
+		const { dates, time, result } = this.state;
+		var dagur = dates.substring(0,2);
+		var man = dates.substring(3,5);
+		var ar = dates.substring(6,10);
+		var timi = time.substring(0,5)
 
-	};
+		var date =ar+'-'+man+'-'+dagur+'T'+timi+':00.000Z';
+		var bloodTest = parseFloat(result)
+		const data = {
+			bloodTest,
+			date
+		}
+		console.log(data)
+		dispatch(createBlood('/',data))
+
+  };
+
+  componentDidMount() {
+    const { dispatch,  isAuthenticated} = this.props;
+    console.log(isAuthenticated)
+    if(isAuthenticated){
+    dispatch(fetchBlood('/'));
+    }
+  };
 
 	componentDidMount() {
 		const { dispatch } = this.props;
@@ -125,11 +96,11 @@ class Bloodtest extends Component {
 							<div className="newTest__input">
 								<label htmlFor="testDate" className="newTest__label">Date:</label>
 								<input
-									name="date"
+									name="dates"
 									type="text"
 									className="newTest__result"
 									id="testDate"
-									value={this.state.date}
+									value={this.state.dates}
 									placeholder="12.02.1996"
 									onChange={this.handleInputChange}
 									required
@@ -187,10 +158,11 @@ class Bloodtest extends Component {
 }
 
 const mapStateToProps = state => {
-	return {
-		isLoading: state.blood.isLoading,
-		blood: state.blood.blood,
-		error: state.blood.error
-	};
-};
+    return {
+      isLoading: state.blood.isLoading,
+      blood: state.blood.blood,
+      error: state.blood.error,
+      isAuthenticated: true,
+    };
+  };
 export default connect(mapStateToProps)(Bloodtest);
