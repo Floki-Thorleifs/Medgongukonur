@@ -158,7 +158,7 @@ class Bloodtest extends Component {
     return (
       <React.Fragment>
         <button className="results__new" onClick={this.handleClick}>
-          + Enter results
+          Enter results
         </button>
         <div className="testResults">
           <h2 className="results__recent">Recent results</h2>
