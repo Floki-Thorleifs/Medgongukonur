@@ -3,13 +3,19 @@
 .sidebar {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  min-height: 100vh;
   width: 20%;
   min-width: 250px;
   margin-left: -8px;
   margin-top: -8px;
   background: $accent;
   font-family: $font-heading;
+
+  &__wrapper {
+    position: fixed;
+    width: 20%;
+    min-width: 250px;
+  }
 
   &__heading {
     display: flex;
@@ -19,7 +25,9 @@
   }
 
   &__heading h3 {
-    margin-top: 2 * $gutter;
+    margin: 0 auto;
+    margin-top: 3 * $gutter;
+    margin-bottom: $gutter;
     color: $color-sidebar;
     font-family: $font-heading;
   }
@@ -27,8 +35,9 @@
   &__item {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    margin: $gutter;
+    justify-content: flex-end;
+    margin-top: $gutter;
+    margin-right: $gutter * 2;
     color: $color-sidebar;
     text-decoration: none;
   }

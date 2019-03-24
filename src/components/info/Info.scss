@@ -1,2 +1,41 @@
 @import "../../config.scss";
 
+.info {
+  display: flex;
+  flex-direction: column;
+  margin: $gutter * 2;
+  color: #222222;
+  font-family: $font-footer;
+
+  &__article {
+    background:#f5f5f5;
+    padding: $gutter $gutter * 2;
+    width: 80%;
+  }
+
+  &__article:last-child {
+    margin-bottom: $gutter * 3;
+  }
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  &__subheading {
+    font-weight: 700;
+    color: #2b2b2b;
+    margin-top: $gutter * 1.5;
+    margin-bottom: 0;
+  }
+
+  &__paragraph {
+    font-weight: 300;
+    line-height: 1.5rem;
+  }
+
+  &__subheading + &__paragraph {
+    margin-top: 0.5rem;
+  }
+}
