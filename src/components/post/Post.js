@@ -28,8 +28,8 @@ class Post extends Component {
         const comments = data.comments.map((i, index) => {
           return (
             <div className="postItem__comments--single" key={index}>
+              <p>{i.comment}</p>
               <p>
-                {i.comment} - Created:
                 {timeMaker(i.created)} - {dateMaker(i.created)}
               </p>
             </div>
@@ -39,8 +39,8 @@ class Post extends Component {
           <div className="container">
             <div className="postItem">
               <ul>
-                <li>{dateMaker(data.created)}</li>
                 <li>{timeMaker(data.created)}</li>
+                <li>{dateMaker(data.created)}</li>
               </ul>
               <div className="postItem__post">
                 <div className="postItem__question">
