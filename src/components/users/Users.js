@@ -2,32 +2,40 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import User from './user/User';
 import { create } from 'domain';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import { fetchLjos } from '../../api/thunk/ljos';
-
 
 //import './Wall.scss';
 
 class Users extends Component {
   constructor(props) {
-		super(props);
-		this.state = {
-			isLoading: false,
-			ljos: null,
-			error: null,
-		};
-	}
+    super(props);
+    this.state = {
+      isLoading: false,
+      ljos: null,
+      error: null
+    };
+  }
 
-
-	componentDidMount() {
+  componentDidMount() {
     const { dispatch } = this.props;
-		dispatch(fetchLjos('/admin'));
-	}
+    dispatch(fetchLjos('/admin'));
+  }
   render() {
-    
     const { ljos } = this.props;
-		console.log(ljos)
-    const result = {
+  
+    console.log('ljos');
+    console.log(ljos);
+
+    let user = [];
+    if (ljos) {
+      for (let i = 0; i < ljos.length; i++) {
+        console.log(ljos[i].name);
+        user.push(<User data={ljos[i].dateArr} name={ljos[i].name} key={i} />)
+      }
+    }
+
+/*     const result = {
       result: '4.6',
       created: '2019'
     };
@@ -44,26 +52,26 @@ class Users extends Component {
 
     const tempUsers = [tempUser, tempUser, tempUser];
 
-    const { data } = this.props;
-
-    const users = tempUsers.map((i, index) => {
+    const { data } = this.props; */
+/* 
+    const users = data.map((i, index) => {
       return <User data={i.dataArr} name={i.name} key={index} />;
-    });
+    });  */
+
+
     return (
       <React.Fragment>
-        <div class="userwrapper">
-          {users}
-        </div>
+        <div class="userwrapper">{user}</div>
       </React.Fragment>
     );
   }
 }
 const mapStateToProps = state => {
-	return {
-		isLoading: state.ljos.isLoading,
-		ljos: state.ljos.ljos,
-		error: state.ljos.error,
-		isAuthenticated: true
-	};
+  return {
+    isLoading: state.ljos.isLoading,
+    ljos: state.ljos.ljos,
+    error: state.ljos.error,
+    isAuthenticated: true
+  };
 };
 export default connect(mapStateToProps)(Users);

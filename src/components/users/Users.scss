@@ -11,20 +11,45 @@
   flex-direction: column;
   background: #ededed;
   width: 80%;
+  border-radius: 6px;
+  border: 1px #d4d4d4 solid;
   margin: $gutter * 2 auto 0;
-  padding: $gutter $gutter * 1.5;
+  // padding: $gutter $gutter * 1.5;
   font-family: $font-footer;
+  align-items: center;
 
   &__name {
     display: flex;
     flex-direction: row;
+    color: white;
     // background: red;
   }
 
   &__data {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    padding-bottom: $gutter * 2;
     // background: green;
     width: 100%;
   }
+}
+
+.bloodsugar {
+  // margin-left: $gutter * 2;
+  margin: 5px 15px;
+  border: solid 1px #d4d4d4;
+  border-radius: 6px;
+  background-color: #4b4d4d;
+  p {
+    margin-left: 20px;
+    color: white;
+  }
+}
+
+.daybutton {
+  background-color: #717474;
+}
+
+.userbutton {
+  background-color: #4d9cb7;
 }
