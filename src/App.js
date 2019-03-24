@@ -7,6 +7,7 @@ import Home from './routes/home';
 import Chat from './routes/chat';
 import Login from './routes/login';
 import Blood from './routes/tests';
+import Info from './routes/info';
 import Midwife from './routes/midwife';
 
 class App extends Component {
@@ -20,6 +21,7 @@ class App extends Component {
             <Route path="/" exact component={Login} />
             <Route path="/chat" component={Chat} />
             <Route path="/tests" exact component={Blood} />
+            <Route path="/info" exact component={Info} />
             <Route path="/midwife" exact component={Midwife} />
           </Switch>
         </div>
