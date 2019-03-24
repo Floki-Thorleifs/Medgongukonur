@@ -13,8 +13,10 @@ class Blood extends Component {
     return (
       <div className="bloodwrapper">
         <Sidebar />
-        <BloodTest />
-        <Footer />
+        <div className="wrapwrap">
+          <BloodTest />
+          <Footer />
+        </div>
       </div>
     );
   }

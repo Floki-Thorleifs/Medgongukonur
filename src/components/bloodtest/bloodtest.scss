@@ -6,6 +6,12 @@
   flex-direction: row;
 }
 
+.wrapwrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 .resultwrapper {
   display: flex;
   flex-direction: column;
