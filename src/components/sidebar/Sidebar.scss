@@ -11,9 +11,8 @@
   font-family: $font-heading;
 
   &__wrapper {
-    position: fixed;
-    width: 20%;
-    min-width: 250px;
+    flex-direction: row;
+    margin-left: 40px;
   }
 
   &__heading {
