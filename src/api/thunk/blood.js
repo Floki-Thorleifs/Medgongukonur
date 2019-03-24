@@ -31,9 +31,7 @@ export const createBlood = (endpoint, data) => {
     let blood;
 
     try {
-        console.log(data)
       blood = await post2(endpoint, data);
-      console.log(blood)
     } catch (e) {
       return dispatch(createBloodError(e))
     }

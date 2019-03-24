@@ -14,7 +14,6 @@ class Post extends Component {
       return timi;
     };
     const dateMaker = date => {
-      console.log(date);
       const year = date.substring(0, 4);
       const month = date.substring(5, 7);
       const day = date.substring(8, 10);
@@ -24,7 +23,6 @@ class Post extends Component {
     const { data } = this.props;
     function getAuth() {
       if (data) {
-        console.log(data.comments);
         const comments = data.comments.map((i, index) => {
           return (
             <div className="postItem__comments--single" key={index}>

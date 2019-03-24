@@ -28,7 +28,6 @@ export const loginUser = (username, password) => {
 
 export const logout = () => {
     return async (dispatch) => {
-        console.log('fer hingad bitch')
         dispatch(requestLogout());
 
         let bye;

@@ -28,9 +28,9 @@ class Day extends Component {
           <h3 onClick={handleClick} className="user__date">{name}</h3>
           <div className="user__data">
             <div className="user__results">
-              <div className="tests__heading">
-                <p className="tests__element">Tími</p>
-                <p className="tests__element">Blóðsykur</p>
+              <div className="user__heading">
+                <p className="user__element">Time</p>
+                <p className="user__element">Bloodsugar</p>
               </div>
               {bloods}
             </div>

@@ -24,7 +24,7 @@ class UserResults extends Component {
 
     return (
       <div className="bloodsugar">
-        <p>{blood.result + 'mmol'}</p>
+        <p>{blood.result + ' mmol'}</p>
         <p className="bloodsugar__time">{dateString}</p>
       </div>
     );
