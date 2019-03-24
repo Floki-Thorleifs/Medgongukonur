@@ -4,6 +4,8 @@ import Day from '../../bloodtest/day/Day';
 //import { fetchBlood } from '../../api/thunk/blood';
 import { connect } from 'react-redux';
 
+import './../Users.scss';
+
 class UserResults extends Component {
   static propTypes = {
     blood: PropTypes.object

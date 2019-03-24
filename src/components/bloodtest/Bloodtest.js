@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Day from './day/Day';
-import { fetchBlood, createBlood} from '../../api/thunk/blood';
+import { fetchBlood, createBlood } from '../../api/thunk/blood';
 import { connect } from 'react-redux';
 
 import './bloodtest.scss';
@@ -25,7 +25,7 @@ class Bloodtest extends Component {
 
 	handleInputChange = e => {
 		const { name, value } = e.target;
-		console.log(name,value)
+		console.log(name, value)
 
 		if (name) {
 			this.setState({ [name]: value });
@@ -43,29 +43,29 @@ class Bloodtest extends Component {
 		this.handleClick();
 		const { dispatch } = this.props;
 		const { dates, time, result } = this.state;
-		var dagur = dates.substring(0,2);
-		var man = dates.substring(3,5);
-		var ar = dates.substring(6,10);
-		var timi = time.substring(0,5)
+		var dagur = dates.substring(0, 2);
+		var man = dates.substring(3, 5);
+		var ar = dates.substring(6, 10);
+		var timi = time.substring(0, 5)
 
-		var date =ar+'-'+man+'-'+dagur+'T'+timi+':00.000Z';
+		var date = ar + '-' + man + '-' + dagur + 'T' + timi + ':00.000Z';
 		var bloodTest = parseFloat(result)
 		const data = {
 			bloodTest,
 			date
 		}
 		console.log(data)
-		dispatch(createBlood('/',data))
+		dispatch(createBlood('/', data))
 
-  };
+	};
 
-  componentDidMount() {
-    const { dispatch,  isAuthenticated} = this.props;
-    console.log(isAuthenticated)
-    if(isAuthenticated){
-    dispatch(fetchBlood('/'));
-    }
-  };
+	componentDidMount() {
+		const { dispatch, isAuthenticated } = this.props;
+		console.log(isAuthenticated)
+		if (isAuthenticated) {
+			dispatch(fetchBlood('/'));
+		}
+	};
 
 	componentDidMount() {
 		const { dispatch } = this.props;
@@ -86,7 +86,7 @@ class Bloodtest extends Component {
 				);
 			});
 		} else {
-			days = <h3>Nothing to see here</h3>
+			days = <h3 className="results__recent">No results yet</h3>
 		}
 		if (this.state.isClicked) {
 			return (
@@ -158,11 +158,11 @@ class Bloodtest extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-      isLoading: state.blood.isLoading,
-      blood: state.blood.blood,
-      error: state.blood.error,
-      isAuthenticated: true,
-    };
-  };
+	return {
+		isLoading: state.blood.isLoading,
+		blood: state.blood.blood,
+		error: state.blood.error,
+		isAuthenticated: true,
+	};
+};
 export default connect(mapStateToProps)(Bloodtest);
