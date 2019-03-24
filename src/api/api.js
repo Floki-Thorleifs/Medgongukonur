@@ -1,4 +1,4 @@
-const baseurl = 'http://127.0.0.1:3030/';
+const baseurl = 'http://127.0.0.1:3030';
 
 //todo gera get, delete, fetch, patch, post
 

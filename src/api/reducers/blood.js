@@ -13,7 +13,7 @@ import {
     blood: {},
     error: null,
     errors: [],
-    isAuthenticated: false,
+    isAuthenticated: true,
   };
   
   export default (state = initialState, action) => {
