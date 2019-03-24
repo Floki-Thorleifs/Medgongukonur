@@ -38,15 +38,15 @@ class Post extends Component {
         return (
           <div className="container">
             <div className="postItem">
-              <ul>
-                <li>{timeMaker(data.created)}</li>
-                <li>{dateMaker(data.created)}</li>
-              </ul>
               <div className="postItem__post">
                 <div className="postItem__question">
                   <h3 className="postItem__content">{data.question}</h3>
+                  <p>
+                    {timeMaker(data.created)} - {dateMaker(data.created)}
+                  </p>
                 </div>
                 <div className="postItem__comments">{comments}</div>
+                <textarea type="text" name="comment" id="comments" />
               </div>
             </div>
           </div>
