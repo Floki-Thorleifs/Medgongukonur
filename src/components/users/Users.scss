@@ -1,0 +1,30 @@
+@import "../../config.scss";
+
+.userwrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  background: #ededed;
+  width: 80%;
+  margin: $gutter * 2 auto 0;
+  padding: $gutter $gutter * 1.5;
+  font-family: $font-footer;
+
+  &__name {
+    display: flex;
+    flex-direction: row;
+    // background: red;
+  }
+
+  &__data {
+    display: flex;
+    flex-direction: row;
+    // background: green;
+    width: 100%;
+  }
+}

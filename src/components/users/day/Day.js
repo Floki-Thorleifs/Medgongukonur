@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import UserResults from '../userResults/UserResults';
 
-//import './Wall.scss';
+import './../Users.scss';
 
 class Day extends Component {
   static propTypes = {
@@ -25,7 +25,7 @@ class Day extends Component {
     if (this.state.isClicked) {
       return (
         <div className="user">
-          <h3 onClick={handleClick}>{name}</h3>
+          <h3 onClick={handleClick} className="user__name">{name}</h3>
           <div className="user__data">
             <ul>{bloods}</ul>
           </div>
@@ -34,7 +34,7 @@ class Day extends Component {
     }
     return (
       <div className="user">
-        <h3 onClick={handleClick}>{name}</h3>
+        <h3 onClick={handleClick} className="user__name">{name}</h3>
       </div>
     );
   }

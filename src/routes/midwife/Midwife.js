@@ -11,9 +11,11 @@ class Midwife extends Component {
   render() {
     return (
       <React.Fragment>
-        <Sidebar />
-        <Users />
-        <Footer />
+        <div className="chatwrapper">
+          <Sidebar />
+          <Users />
+          <Footer />
+        </div>
       </React.Fragment>
     );
   }

@@ -17,16 +17,24 @@ class Day extends Component {
         isClicked: !prevState.isClicked
       }));
     };
+
+    const dateMaker = date => {
+      console.log(date);
+      const timi = date.substring(11, 16);
+      return timi;
+    };
     const { data } = this.props;
-    const results = data.data.map((i, index) => {
+    console.log(data);
+    const results = data.bloodtests.map((i, index) => {
       return (
         <li className="testResults__day__test" key={index}>
           <div className="testResults__day__content">
             <div className="testResults__day__wrapper">
-              <p className="testResults__day__time tests__element">{i.time}</p>
-              <p className="testResults__day__data">{i.data} mmol</p>
+              <p className="testResults__day__time tests__element">
+                {dateMaker(i.created)}
+              </p>
+              <p className="testResults__day__data">{i.result} mmol</p>
             </div>
-            <p class="testResults__day__normal">{data.normal}</p>
           </div>
         </li>
       );
@@ -47,9 +55,7 @@ class Day extends Component {
               <p className="tests__element">Tími</p>
               <p className="tests__element">Blóðsykur</p>
             </div>
-            <div className="tests__results">
-              {results}
-            </div>
+            <div className="tests__results">{results}</div>
           </ul>
         </div>
       </div>

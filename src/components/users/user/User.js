@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Day from '../day/Day';
 
-//import './Wall.scss';
+import './../Users.scss';
 
 class User extends Component {
   static propTypes = {
@@ -18,24 +18,27 @@ class User extends Component {
         isClicked: !prevState.isClicked
       }));
     };
+
     const { data, name } = this.props;
     const bloods = data.map((i, index) => {
       console.log(i.name);
       return <Day data={i.bloodtests} name={i.date} key={index} />;
     });
+
     if (this.state.isClicked) {
       return (
         <div className="user">
-          <h3 onClick={handleClick}>{name}</h3>
+          <h3 onClick={handleClick} className="user__name">{name}</h3>
           <div className="user__data">
             <ul>{bloods}</ul>
           </div>
         </div>
       );
     }
+
     return (
       <div className="user">
-        <h3 onClick={handleClick}>{name}</h3>
+        <h3 onClick={handleClick} className="user__name">{name}</h3>
       </div>
     );
   }
