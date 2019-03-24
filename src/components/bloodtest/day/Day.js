@@ -10,7 +10,6 @@ class Day extends Component {
     isClicked: false
   };
   render() {
-    console.log(this.state.isClicked);
     const handleClick = () => {
       this.setState(prevState => ({
         isClicked: !prevState.isClicked
