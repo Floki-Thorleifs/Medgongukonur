@@ -1,36 +1,104 @@
 @import "../../config.scss";
 
+.bloodwrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.resultwrapper {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: flex-start;
+  margin: $gutter * 2;
+  color: #292929;
+}
+
+.results { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+
+  &__recent {
+    display: flex;
+    flex-direction: column;
+    font-family: $font-footer;
+    font-size: 2rem;
+  }
+
+  &__new {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    margin-top: $gutter;
+    padding: 6px 12px;
+    font-family: $font-footer;
+    font-size: 1rem;
+    font-weight: 200;
+    line-height: 2rem;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid $accent; 
+  }
+}
+
 .tests {
+  display: flex;
+  flex-direction: column;
   margin-left: -($gutter * 2);
+
+  &__heading {
+    display: flex;
+    flex-direction: row;
+    font-weight: 700;
+  }
+
+  &__results {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__element {
+    width: $gutter * 4;
+  }
 }
 
 .testResults {
-  margin-left: 270px;
+  max-width: 600px;
+  width: 100%;
+  border-top: 1px solid #d4d4d4;
 
   &__day {
     font-family: $font-footer;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    flex-direction: column;
 
     &__test {
       font-weight: 300;
-    }
-
-    &__test {
-      
-    }
-
-    &__heading {
-      display: flex;
-      flex-direction: row;
-      font-weight: 700;
     }
     
     &__content {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      width: 100%;
     }
 
     &__time {
       color: $accent;
+    }
+
+    &__normal {
+      text-align: end;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
     }
   }
 
@@ -48,9 +116,4 @@
     display: flex;
     flex-direction: row;
   }
-
-  &__day p {
-    margin-right: $gutter * 2;
-  }
-
 }

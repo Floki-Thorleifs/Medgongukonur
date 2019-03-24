@@ -5,6 +5,8 @@ import Footer from '../../components/footer/Footer';
 import BloodTest from '../../components/bloodtest/Bloodtest';
 import { normalize } from 'path';
 
+import '../../components/bloodtest/bloodtest.scss';
+
 //todo hafa token a signin
 class Login extends Component {
   render() {
@@ -29,7 +31,7 @@ class Login extends Component {
 
     const komp = [temp1, temp2];
     return (
-      <div>
+      <div className="bloodwrapper">
         <Sidebar />
         <BloodTest data={komp} />
         <Footer />

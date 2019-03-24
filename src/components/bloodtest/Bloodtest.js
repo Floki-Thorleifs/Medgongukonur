@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Day from './day/Day';
+
+import './bloodtest.scss';
 
 class Bloodtest extends Component {
 	static propTypes = {
@@ -12,7 +14,15 @@ class Bloodtest extends Component {
 			return <Day data={i} key={index} />;
 		});
 		return (
-			<div className="testResults">{days}</div>
+			<React.Fragment>
+				<div class="resultwrapper">
+					<div className="results">
+						<h2 className="results__recent">Recent results</h2>
+						<button className="results__new">+ Enter results</button>
+					</div>
+					<div className="testResults">{days}</div>
+				</div>
+			</React.Fragment>
 		);
 	}
 }

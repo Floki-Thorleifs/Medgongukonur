@@ -4,7 +4,7 @@ import Helmet from 'react-helmet';
 import { Route, Switch, withRouter } from 'react-router-dom';
 
 import Home from './routes/home';
-import Chat from './routes/home';
+import Chat from './routes/chat';
 import Login from './routes/login';
 import Blood from './routes/tests';
 
@@ -12,7 +12,7 @@ class App extends Component {
   render() {
     return (
       <main>
-        <Helmet defaultTitle="Medgongukonur" />
+        <Helmet defaultTitle="Medgongukongur" />
 
         <div>
           <Switch location={this.props.location}>
