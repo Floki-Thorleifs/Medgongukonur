@@ -21,7 +21,6 @@ class User extends Component {
 
     const { data, name } = this.props;
     const bloods = data.map((i, index) => {
-      console.log(i.name);
       return <Day data={i.bloodtests} name={i.date} key={index} />;
     });
 

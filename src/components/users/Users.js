@@ -26,7 +26,6 @@ class Users extends Component {
   render() {
     
     const { ljos } = this.props;
-		console.log(ljos)
     const result = {
       result: '4.6',
       created: '2019'

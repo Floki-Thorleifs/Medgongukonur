@@ -17,32 +17,28 @@ export const fetchChat = (endpoint) => {
 
     try {
       chat = await get(endpoint);
-      console.log(chat)
     } catch (e) {
       return dispatch(fetchChatError(e))
     }
-    console.log(chat.result)
     dispatch(fetchChatSuccess(chat.result));
   }
 }
 
 export const createChat = (endpoint, data) => {
-  return async (dispatch) => {
-      console.log(data)
-
-    dispatch(createChatRequest());
-    let chat;
-
-    try {
-        console.log(data)
-      chat = await post2(endpoint, data);
-    } catch (e) {
-      return dispatch(createChatError(e))
+    return async (dispatch) => {
+  
+      dispatch(createChatRequest());
+      let chat;
+  
+      try {
+        chat = await post2(endpoint, data);
+      } catch (e) {
+        return dispatch(createChatError(e))
+      }
+  
+      dispatch(createChatSuccess(chat.result));
     }
-
-    dispatch(createChatSuccess(chat.result));
   }
-}
 
 
 

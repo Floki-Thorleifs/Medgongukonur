@@ -17,7 +17,6 @@ export const fetchLjos = (endpoint) => {
 
     try {
       ljos = await get(endpoint);
-      console.log(ljos)
     } catch (e) {
       return dispatch(fetchLjosError(e))
     }
@@ -32,7 +31,6 @@ export const createLjos = (endpoint, data) => {
     let ljos;
 
     try {
-        console.log(data)
       ljos = await post2(endpoint, data);
     } catch (e) {
       return dispatch(createLjosError(e))

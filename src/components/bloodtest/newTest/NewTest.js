@@ -22,7 +22,6 @@ class NewTest extends Component {
     const { dispatch } = this.props;
     const { date, time, result } = this.state;
 
-    console.log(date, time, result);
     //dispatch(loginUser(username, password));
   };
 

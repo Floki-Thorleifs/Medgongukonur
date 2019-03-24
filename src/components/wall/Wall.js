@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Post from '../post/Post';
 import { fetchChat, createChat } from '../../api/thunk/chat';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import './Wall.scss';
 
@@ -13,7 +14,8 @@ class Wall extends Component {
       isLoading: false,
       chat: '',
       error: null,
-      question: ''
+      question: '',
+      redirect: false
     };
   }
   state = {
@@ -21,7 +23,6 @@ class Wall extends Component {
   };
   componentWillMount() {
     const { dispatch } = this.props;
-    console.log();
     dispatch(fetchChat('/chat'));
   }
 
@@ -36,18 +37,20 @@ class Wall extends Component {
     this.handleClick();
     const { dispatch } = this.props;
     const {question} =this.state;
-    console.log(question)
-    dispatch(createChat('/chat/question', question));
+    dispatch(createChat('/chat/question', {question}));
+
+
   };
 
   handleInputChange = e => {
     const { name, value } = e.target;
-    console.log(name, value);
 
     if (name) {
       this.setState({ [name]: value });
     }
   };
+
+
 
   render() {
     const { chat } = this.props;
@@ -70,7 +73,7 @@ class Wall extends Component {
             id="question"
             onChange={this.handleInputChange}
           />
-          <button onClick={this.handleSubmit}>Submit</button>
+          <Link to='/'><button>Submit</button></Link>
           {posts}
         </div>
       </React.Fragment>

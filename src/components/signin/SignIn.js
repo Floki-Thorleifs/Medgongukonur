@@ -35,7 +35,6 @@ class SignIn extends Component {
 
     const { dispatch } = this.props;
     const { username, password } = this.state;
-    console.log(username, password);
     dispatch(loginUser(username, password));
   };
 
