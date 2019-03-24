@@ -6,7 +6,6 @@ import { connect } from 'react-redux';
 
 import './bloodtest.scss';
 
-
 class Bloodtest extends Component {
 	constructor(props) {
 		super(props);
@@ -16,8 +15,8 @@ class Bloodtest extends Component {
 			error: null,
 			dates: '',
 			time: '',
-			result: '',
-		}
+			result: ''
+		};
 	}
 	state = {
 		isClicked: false
@@ -25,7 +24,7 @@ class Bloodtest extends Component {
 
 	handleInputChange = e => {
 		const { name, value } = e.target;
-		console.log(name, value)
+		console.log(name, value);
 
 		if (name) {
 			this.setState({ [name]: value });
@@ -46,47 +45,47 @@ class Bloodtest extends Component {
 		var dagur = dates.substring(0, 2);
 		var man = dates.substring(3, 5);
 		var ar = dates.substring(6, 10);
-		var timi = time.substring(0, 5)
+		var timi = time.substring(0, 5);
 
 		var date = ar + '-' + man + '-' + dagur + 'T' + timi + ':00.000Z';
-		var bloodTest = parseFloat(result)
+		var bloodTest = parseFloat(result);
 		const data = {
 			bloodTest,
 			date
-		}
-		console.log(data)
-		dispatch(createBlood('/', data))
-
+		};
+		console.log(data);
+		dispatch(createBlood('/', data));
 	};
 
 	componentDidMount() {
 		const { dispatch, isAuthenticated } = this.props;
-		console.log(isAuthenticated)
+		console.log(isAuthenticated);
 		if (isAuthenticated) {
 			dispatch(fetchBlood('/'));
 		}
-	};
+	}
 
 	componentDidMount() {
 		const { dispatch } = this.props;
 		dispatch(fetchBlood('/'));
-	};
+	}
 
 	render() {
 		const { blood } = this.props;
 		let days;
-		if (blood.size) {
-
+		console.log(blood, !(Object.keys(blood).length === 0));
+		if (!(Object.keys(blood).length === 0)) {
 			days = blood.map((i, index) => {
+				console.log(i);
 				return (
 					<Fragment>
 						<h2 className="results__recent">Recent results</h2>
-						<Day blood={i} key={index} />
+						<Day data={i} key={index} />
 					</Fragment>
 				);
 			});
 		} else {
-			days = <h3 className="results__recent">No results yet</h3>
+			days = <h3>Nothing to see here</h3>;
 		}
 		if (this.state.isClicked) {
 			return (
@@ -94,7 +93,9 @@ class Bloodtest extends Component {
 					<div className="tests__content">
 						<div className="newTest">
 							<div className="newTest__input">
-								<label htmlFor="testDate" className="newTest__label">Date:</label>
+								<label htmlFor="testDate" className="newTest__label">
+									Date:
+                </label>
 								<input
 									name="dates"
 									type="text"
@@ -107,7 +108,9 @@ class Bloodtest extends Component {
 								/>
 							</div>
 							<div className="newTest__input">
-								<label htmlFor="testTime" className="newTest__label">Time:</label>
+								<label htmlFor="testTime" className="newTest__label">
+									Time:
+                </label>
 								<input
 									name="time"
 									type="text"
@@ -120,7 +123,9 @@ class Bloodtest extends Component {
 								/>
 							</div>
 							<div className="newTest__input">
-								<label htmlFor="testData" className="newTest__label">Bloodsugar:</label>
+								<label htmlFor="testData" className="newTest__label">
+									Bloodsugar:
+                </label>
 								<input
 									name="result"
 									className="newTest__result"
@@ -131,13 +136,16 @@ class Bloodtest extends Component {
 									required
 								/>
 							</div>
-							<div class="newTest__buttons">
+							<div className="newTest__buttons">
 								<button className="newTest__button" onClick={this.handleSubmit}>
 									Submit results
-            		</button>
-								<button className="newTest__button cancel" onClick={this.handleClick}>
+                </button>
+								<button
+									className="newTest__button cancel"
+									onClick={this.handleClick}
+								>
 									Cancel
-          		</button>
+                </button>
 							</div>
 						</div>
 						<div className="testResults">{days}</div>
@@ -147,7 +155,6 @@ class Bloodtest extends Component {
 		}
 		return (
 			<React.Fragment>
-
 				<button className="results__new" onClick={this.handleClick}>
 					+ Enter results
         </button>
@@ -162,7 +169,7 @@ const mapStateToProps = state => {
 		isLoading: state.blood.isLoading,
 		blood: state.blood.blood,
 		error: state.blood.error,
-		isAuthenticated: true,
+		isAuthenticated: true
 	};
 };
 export default connect(mapStateToProps)(Bloodtest);
