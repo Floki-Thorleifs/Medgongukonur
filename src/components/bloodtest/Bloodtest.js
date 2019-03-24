@@ -74,8 +74,10 @@ class Bloodtest extends Component {
 
 	render() {
 		const { blood } = this.props;
+		console.log(blood)
 		let days;
 		if (blood.size) {
+			console.log(blood)
 
 			days = blood.map((i, index) => {
 				return (
