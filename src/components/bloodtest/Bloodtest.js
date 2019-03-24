@@ -24,7 +24,6 @@ class Bloodtest extends Component {
 
   handleInputChange = e => {
     const { name, value } = e.target;
-    console.log(name, value);
 
     if (name) {
       this.setState({ [name]: value });
@@ -53,13 +52,11 @@ class Bloodtest extends Component {
       bloodTest,
       date
     };
-    console.log(data);
     dispatch(createBlood('/', data));
   };
 
   componentDidMount() {
     const { dispatch, isAuthenticated } = this.props;
-    console.log(isAuthenticated);
     if (isAuthenticated) {
       dispatch(fetchBlood('/'));
     }
@@ -73,10 +70,8 @@ class Bloodtest extends Component {
   render() {
     const { blood } = this.props;
     let days;
-    console.log(blood, !(Object.keys(blood).length === 0));
     if (!(Object.keys(blood).length === 0)) {
       days = blood.map((i, index) => {
-        console.log(i);
         return (
           <Fragment>
             <Day data={i} key={index} />

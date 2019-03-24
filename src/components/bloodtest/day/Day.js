@@ -19,12 +19,10 @@ class Day extends Component {
     };
 
     const dateMaker = date => {
-      console.log(date);
       const timi = date.substring(11, 16);
       return timi;
     };
     const { data } = this.props;
-    console.log(data);
     const results = data.bloodtests.map((i, index) => {
       return (
         <li className="testResults__day__test" key={index}>
