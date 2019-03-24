@@ -44,7 +44,6 @@ class Post extends Component {
                   </p>
                 </div>
                 <div className="postItem__comments">{comments}</div>
-                <textarea type="text" name="comment" id="comments" />
               </div>
             </div>
           </div>
