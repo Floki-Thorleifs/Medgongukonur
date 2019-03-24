@@ -94,7 +94,15 @@ class Bloodtest extends Component {
 		const { dispatch } = this.props;
 		const { date, time, result } = this.state;
 
-	};
+  };
+
+  componentDidMount() {
+    const { dispatch,  isAuthenticated} = this.props;
+    console.log(isAuthenticated)
+    if(isAuthenticated){
+    dispatch(fetchBlood('/'));
+    }
+  };
 
 	componentDidMount() {
 		const { dispatch } = this.props;
@@ -187,10 +195,11 @@ class Bloodtest extends Component {
 }
 
 const mapStateToProps = state => {
-	return {
-		isLoading: state.blood.isLoading,
-		blood: state.blood.blood,
-		error: state.blood.error
-	};
-};
+    return {
+      isLoading: state.blood.isLoading,
+      blood: state.blood.blood,
+      error: state.blood.error,
+      isAuthenticated: true,
+    };
+  };
 export default connect(mapStateToProps)(Bloodtest);
