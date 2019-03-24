@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Day from '../day/Day';
+import UserResults from '../userResults/UserResults';
 
 //import './Wall.scss';
 
-class User extends Component {
+class Day extends Component {
   static propTypes = {
     data: PropTypes.array,
     name: PropTypes.string
@@ -20,8 +20,7 @@ class User extends Component {
     };
     const { data, name } = this.props;
     const bloods = data.map((i, index) => {
-      console.log(i.name);
-      return <Day data={i.bloodtests} name={i.date} key={index} />;
+      return <UserResults blood={i} key={index} />;
     });
     if (this.state.isClicked) {
       return (
@@ -41,4 +40,4 @@ class User extends Component {
   }
 }
 
-export default User;
+export default Day;
