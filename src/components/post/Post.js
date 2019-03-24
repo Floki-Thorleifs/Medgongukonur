@@ -27,9 +27,12 @@ class Post extends Component {
         console.log(data.comments);
         const comments = data.comments.map((i, index) => {
           return (
-            <p className="postItem__comments--single" key={index}>
-              {i.comment}
-            </p>
+            <div className="postItem__comments--single" key={index}>
+              <p>
+                {i.comment} - Created:
+                {timeMaker(i.created)} - {dateMaker(i.created)}
+              </p>
+            </div>
           );
         });
         return (
