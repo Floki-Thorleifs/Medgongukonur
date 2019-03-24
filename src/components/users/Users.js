@@ -22,7 +22,7 @@ class Users extends Component {
 
     const tempUser = {
       name: 'siggi',
-      dataArr: stuff
+      dataArr: [stuff, stuff, stuff]
     };
 
     const tempUsers = [tempUser, tempUser, tempUser];
